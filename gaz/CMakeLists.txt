@@ -28,3 +28,21 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_link_boost(${PROJECT_NAME} thread)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
+find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation
+)
+catkin_package(
+  ...
+  CATKIN_DEPENDS message_runtime ...
+  ...)
+ add_message_files(
+  FILES
+  input.msg
+)
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)

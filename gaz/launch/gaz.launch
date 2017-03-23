@@ -20,7 +20,7 @@
           -model youbot">
   </node>
 
-  <node pkg="gaz" type="BaseCommander.py" name="BaseCommander"></node>
+  <node pkg="gaz" type="TiltMotion.py" name="TiltMotion"></node>
 
   <!-- launch joint state controller -->
   <include file="$(find youbot_gazebo_control)/launch/joint_state_controller.launch" />
